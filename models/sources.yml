@@ -1,11 +1,11 @@
 sources:
   - name: stripe
-    database: raw
+    database: til_portfolio_projects
     schema: stripe
     tables:
       - name: payment
   - name: jaffle_shop
-    database: raw
+    database: til_portfolio_projects
     schema: jaffle_shop
     tables:
       - name: orders
