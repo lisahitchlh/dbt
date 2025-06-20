@@ -3,18 +3,15 @@
 -- create a CTE with source data
 WITH source as 
 (SELECT * 
-FROM {{ source('stripe', 'payment')}}
+FROM {{ source('jaffle_shop', 'orders')}}
 ),
 
 -- CTE to rename columns
 renamed as (
-    SELECT id as payment_id,
-    orderid as order_id,
-    paymentmethod as payment_method,
-    status,
-    amount,
-    created as created_at,
-    _batched_at
+    SELECT 
+    id as order_id,
+    customer as user_id,
+    ordered_at as order_date,
     FROM source
 )
 
