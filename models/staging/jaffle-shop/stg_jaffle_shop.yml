@@ -1,17 +1,22 @@
 models:
   - name: stg_jaffle_shop__customers
+    description: This is a table for staged customer data from our jaffle shop app
     columns:
       - name: customer_id
+        description: this is our unique customer id. Can be used as primary key.
         tests:
           - unique
           - not_null
   - name: stg_jaffle_shop__orders
+    description: the orders table, staged, from our jaffle shop app
     columns:
       - name: order_id
+        description: order ID that can be used as primary key.
         tests:
           - unique
           - not_null
       - name: status
+        description: "{{doc ('order_status')}}"
         tests:
           - accepted_values:
               values:
